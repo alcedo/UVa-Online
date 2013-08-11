@@ -17,7 +17,6 @@ public class Problem_11172 {
 
             if(lhs - rhs > 0) {    // LHS > RHS
                 out.print(">");
-
             }
             else if(lhs - rhs < 0) {    // RHS > LHS
                 out.print("<");
