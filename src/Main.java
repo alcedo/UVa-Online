@@ -1,9 +1,13 @@
+import java.util.Scanner;
+
+import static java.lang.System.out;
+
 /**
- * Created with IntelliJ IDEA.
- * User: Victor
- * Date: 11/8/13
- * Time: 11:03 PM
- * To change this template use File | Settings | File Templates.
+ * Use this file to submit. UVA only accepts class Main
  */
 public class Main {
+
+    public static void main(String[] args) {
+
+    }
 }
