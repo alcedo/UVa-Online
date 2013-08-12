@@ -8,6 +8,16 @@ import static java.lang.System.out;
 public class Main {
 
     public static void main(String[] args) {
-    	out.println("it works!");
+    	Scanner in = new Scanner(System.in);
+		int lines = in.nextInt();
+		
+		while(0 != lines--) {
+			
+			// process items
+			
+		}
+        
+        
+        
     }
 }
