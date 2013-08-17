@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project name="Ant-Build" default="run" basedir=".">
+	<!-- Sets variables which can later be used. -->
+	<!-- The value of a property is accessed via ${} -->
+	<property name="src.dir" location="src" />
+	<property name="build.dir" location="bin" />
+	<property name="dist.dir" location="jar" />
+	
+	<!-- Deletes the existing build  directory-->
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<delete dir="${dist.dir}" />
+	</target>
+
+	<!-- Creates the  build, docs and dist directory-->
+	<target name="makedir">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${dist.dir}" />
+	</target>
+
+	<!-- Compiles the java code   -->
+	<target name="compile" depends="clean, makedir">
+		<javac srcdir="${src.dir}" destdir="${build.dir}">
+		</javac>
+	</target>
+
+	<!--Creates the deployable jar file  -->
+	<target name="jar" depends="compile">
+		<jar destfile="${dist.dir}\myBuild.jar" basedir="${build.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="Main" />
+			</manifest>
+		</jar>
+	</target>
+
+	<!-- This is picked up by eclipse. click on the button to run! --> 
+	<target name="run"  depends="compile, jar">
+		<description>Execute the Jar and sets input file as STDIN</description>
+		<java jar="${dist.dir}\myBuild.jar" fork="true" input="input.txt"/>
+	</target>
+	
+</project> 
