@@ -6,8 +6,11 @@ import java.util.Scanner;
 import static java.lang.System.out;
 
 /**
- * spent 3 hours doing this. 
- * TLE ! 
+ * spent 3 hours doing this BUT TLE! :( 
+ * main idea is to calculate the cycles between each green appearance.
+ * 
+ * discrete time steps of 1 second is simply too slow...
+ * must figure out a way to optimise / re-write algorithm
  */
 public class Problem_467 {
 	public static final boolean DEBUG = false;
@@ -36,7 +39,7 @@ public class Problem_467 {
         	 Arrays.sort(signals);
         	 int startTime = signals[0] - YELLOW_TIME;
         	 
-        	 //clock 
+        	 //clock OPTIMISE HERE!
         	 for(int seconds=startTime*2; seconds<=ONE_HOUR+1; seconds++) {
                 		 
         		 myDebug("*********************");
@@ -92,38 +95,7 @@ public class Problem_467 {
          //out.println("RunTime: " + _elapsedTime);
          
     }
-    
-    // GCD for arrays
-    public static int gcd(int[] input) {
-    	int result = input[0];
-        for(int i = 1; i < input.length; i++) result = gcd(result, input[i]);
-        return result;
-    }
-    
-    //FAST GCD due to bitwise manipulations
-    public static int gcd(int a, int b)
-    {
-        while(b>0) b ^= a ^= b ^= a %= b;
-        return a;
-    }
-    // Normal euclidean GCD 
-    public static int GCD(int a, int b) {
-    	   if (b==0) return a;
-    	   return GCD(b,a%b);
-    }
-    
-    //GCD LONG 
-    public static long gcd(long[] input) {
-        long result = input[0];
-        for(int i = 1; i < input.length; i++) result = GCD(result, input[i]);
-        return result;
-    }
-    
-    public static long GCD(long a, long b) {
-    	   if (b==0) return a;
-    	   return GCD(b,a%b);
-    }
-    
+   
     // DEBUG FUNCTIONS    
     public static void myDebug(String text) {
     	if(DEBUG) out.println(text);
