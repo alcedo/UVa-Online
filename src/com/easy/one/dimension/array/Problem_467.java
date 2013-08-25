@@ -1,4 +1,4 @@
-package com.easy;
+package com.easy.one.dimension.array;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -13,7 +13,7 @@ import java.util.Scanner;
  * (use JAVA BitSet )
  *
  */
-public class Problem_10038 {
+public class Problem_467 {
 
   //start 4:15 end 5:10
 	public static void main(String[] args) {
