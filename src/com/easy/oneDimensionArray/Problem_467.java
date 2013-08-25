@@ -12,6 +12,7 @@ import static java.lang.System.out;
  * discrete time steps of 1 second is simply too slow...
  * must figure out a way to optimise / re-write algorithm
  */
+// sln: https://github.com/infnty/acm/blob/master/acm.uva.es/467.c
 public class Problem_467 {
 	public static final boolean DEBUG = false;
 	
