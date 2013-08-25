@@ -1,8 +1,5 @@
 package com.easy;
 
-import java.util.Scanner;
-import static java.lang.System.*;
-
 /**
  * mistake: forgot to reset hashmap ! generally quite forgetful about resetting
  * flags and statuses. Derived values are still fine.
