@@ -29,19 +29,19 @@ Other sites
 
 USACO 
 ------
-Great for step-by-step walk through. 
-[Training] http://train.usaco.org/usacogate
++Great for step-by-step walk through. 
++[Training] http://train.usaco.org/usacogate
 
  
 TopCoder
 --------
-[Editorials] http://apps.topcoder.com/wiki/display/tc/Algorithm+Problem+Set+Analysis 
-[Tutorials] http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index
++[Editorials] http://apps.topcoder.com/wiki/display/tc/Algorithm+Problem+Set+Analysis 
++[Tutorials] http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index
 
 
 Blog that points to other blogs
 -------------------------------
-[Tausiq] http://tausiq.wordpress.com/2009/02/11/online-judges/
++[Tausiq] http://tausiq.wordpress.com/2009/02/11/online-judges/
  
  
  
