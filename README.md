@@ -29,7 +29,7 @@ Other sites
 Git Repositories with solutions
 -------------------------------
 + https://github.com/marioyc/Online-Judge-Solutions
-
++ http://f0rth3r3c0rd.wordpress.com
 
 
 USACO 
