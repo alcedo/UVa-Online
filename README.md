@@ -10,7 +10,6 @@ Resources:
 2. [Test Case Generator] http://www.uvatoolkit.com/problemssolve.php
 
 
-
 Notes
 ==========
 The program reads the test input from the standard input (stdin) and places the results in the standard output (stdout).
@@ -26,6 +25,12 @@ A correct output with a missing end-of-line character will not be judged as Acce
 
 Other sites
 ==========
+
+Git Repositories with solutions
+-------------------------------
++ https://github.com/marioyc/Online-Judge-Solutions
+
+
 
 USACO 
 ------
