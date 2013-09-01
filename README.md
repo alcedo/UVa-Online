@@ -1,12 +1,13 @@
 UVa-Online
 ==========
 
-Repository for UVa Online Judge.
+Repository for UVa Online Judge (repository of past ACM - ICPC Questions)
 
 
 Resources:
 
-1.) http://www.ntu.edu.sg/home/ehchua/programming/icpc/icpc_getting_started.html
+1. [Getting Started] http://www.ntu.edu.sg/home/ehchua/programming/icpc/icpc_getting_started.html
+2. [Test Case Generator] http://www.uvatoolkit.com/problemssolve.php
 
 
 Notes
@@ -21,3 +22,32 @@ Every line in the input is guaranteed to be finished by the end-of-line characte
 A correct output with a missing end-of-line character will not be judged as Accepted.
 
 
+
+Other sites
+==========
+
+Git Repositories with solutions
+-------------------------------
++ https://github.com/marioyc/Online-Judge-Solutions
++ http://f0rth3r3c0rd.wordpress.com
+
+
+USACO 
+------
++ Great for step-by-step walk through. 
++ [Training] http://train.usaco.org/usacogate
+
+ 
+TopCoder
+--------
++ [Editorials] http://apps.topcoder.com/wiki/display/tc/Algorithm+Problem+Set+Analysis 
++ [Tutorials] http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index
+
+
+Blog that points to other blogs
+-------------------------------
++ [Tausiq] http://tausiq.wordpress.com/2009/02/11/online-judges/
+ 
+ 
+ 
+ 
