@@ -1,3 +1,4 @@
+import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,6 +9,7 @@ import java.io.Writer;
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 import static java.lang.System.out;
 
@@ -17,33 +19,39 @@ import static java.lang.System.out;
 public class Main {
 	public static final boolean DEBUG = false;
 	
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
     	 
-    	 Scanner in = new Scanner(System.in);
-    	 while(in.hasNext()) {
-    		 
-    		 
-    	 }
-    	 
-    
-    
-    
+		BufferedOutputStream output = new BufferedOutputStream(System.out);
+		InputReader input           = new InputReader(System.in);
+		StringBuilder sb = new StringBuilder(2000); //assume initial size of 2000 chars
+		  
+		String str;  
+		while((str = input.readLine()) != null) {
+			if(str.compareTo("#") == 0) break;
+			//StringTokenizer stringTokenizer = new StringTokenizer(str);
+			//int num = Integer.parseInt(stringTokenizer.nextToken());
+				
+			
+			sb.append("\n");
+		}
+		
+		output.write(sb.toString().getBytes());
+		output.flush();
+		output.close();
     
     }// end of static void main
-    
-    
-  
-    
+
+
+	
+	    
 }//End of Main Class
 
 
 
 
 
-
-
 /**************************************************************************
- *  Fast I/O functions
+ *  Fast I/O functions (prevents i/o flushing by buffering)
  **************************************************************************/
 //BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 //BufferedWriter output = new BufferedWriter(new OutputStreamWriter(System.out));
