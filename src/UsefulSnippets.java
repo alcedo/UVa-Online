@@ -59,6 +59,22 @@ public class UsefulSnippets {
 		c[ j ] = tmp;
 	}
 	
+	//Sample class to be used for permutations 
+	public static class Character implements Comparable<Character> { 
+		public char c; 
+		
+		public Character(char c) {this.c = c;}
+		
+		public int compareTo(Character charCompare) {
+			return this.c - charCompare.c;
+		}	
+		
+		public String toString(){
+			return ""+this.c;
+		}
+	}
+	
+	
 	
 	/** GCD  **/ 
     // GCD for arrays
