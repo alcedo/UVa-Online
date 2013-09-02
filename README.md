@@ -26,10 +26,11 @@ A correct output with a missing end-of-line character will not be judged as Acce
 Other sites
 ==========
 
-Git Repositories with solutions
+Repositories with solutions
 -------------------------------
 + https://github.com/marioyc/Online-Judge-Solutions
 + http://f0rth3r3c0rd.wordpress.com
++ http://www.questtosolve.com/
 
 
 USACO 
@@ -52,6 +53,9 @@ Blog that points to other blogs
 Random Algorithm Tutorial Sites
 -------------------------------
 + [Indian Computing Olympiad] http://www.iarcs.org.in/inoi/online-study-material/topics/
+
+ 
+
  
  
  
