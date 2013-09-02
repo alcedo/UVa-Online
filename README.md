@@ -31,6 +31,8 @@ Repositories with solutions
 + https://github.com/marioyc/Online-Judge-Solutions
 + http://f0rth3r3c0rd.wordpress.com
 + http://www.questtosolve.com/
++ https://github.com/baiyubin/pcuva-problems
++ https://github.com/sunstick/UVa-Online-Judge
 
 
 USACO 
