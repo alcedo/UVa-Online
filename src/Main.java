@@ -138,11 +138,14 @@ class InputReader {
 
 	public String readLine() {
 		int c = read();
+		//theres no ASCII -1 value. this signify EOF, and we return empty string
+		if(c == -1) return ""; 
+		
 		StringBuilder res = new StringBuilder();
 		do {
 			res.appendCodePoint(c);
 			c = read();
-		} while (c != '\n');
+		} while (c != '\n' );
 		return res.toString();
 	}
 	
