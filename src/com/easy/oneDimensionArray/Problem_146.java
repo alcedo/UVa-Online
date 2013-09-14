@@ -1,10 +1,5 @@
 package com.easy.oneDimensionArray;
 
-public class Problem_146 {
-
-}
-
-
 
 
 import java.io.BufferedOutputStream;
@@ -25,7 +20,7 @@ import static java.lang.System.out;
 /**
  * Use this file to submit. UVA only accepts class Main
  */
-public class Main {
+public class Problem_146 {
 	public static final boolean DEBUG = false;
 	
     public static void main(String[] args) throws IOException {

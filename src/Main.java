@@ -26,8 +26,8 @@ public class Main {
 		StringBuilder sb = new StringBuilder(2000); //assume initial size of 2000 chars
 		  
 		String str;  
-		while((str = input.readLine()) != null) {
-			if(str.compareTo("#") == 0) break;
+		while((str = input.readLine()).length() > 0) {
+			
 			//StringTokenizer stringTokenizer = new StringTokenizer(str);
 			//int num = Integer.parseInt(stringTokenizer.nextToken());
 				
