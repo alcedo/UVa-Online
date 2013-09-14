@@ -6,6 +6,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.Writer;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -28,9 +29,24 @@ public class Main {
 		String str;  
 		while((str = input.readLine()).length() > 0) {
 			
-			//StringTokenizer stringTokenizer = new StringTokenizer(str);
-			//int num = Integer.parseInt(stringTokenizer.nextToken());
+			StringTokenizer stringTokenizer = new StringTokenizer(str);
+			int duration = Integer.parseInt(stringTokenizer.nextToken());
+			int trackCount = Integer.parseInt(stringTokenizer.nextToken());
+			
+			int[] tracks = new int[trackCount];
+			for(int i=0; i<tracks.length; i++) { 
+				tracks[i] = Integer.parseInt(stringTokenizer.nextToken());
+			}
+			
+			//Loop through each tracks. pick one track at a time, and recursively
+			//search for a solution. The loop acts as a 'bookmark' to mark where it all
+			// started. 
+			for(int i=0; i<tracks.length; i++) {
 				
+				
+			}
+			
+			
 			
 			sb.append("\n");
 		}
@@ -41,8 +57,28 @@ public class Main {
     
     }// end of static void main
 
-
-	
+    // recursive backtracking method. 
+    // recursively pick a track, and add it into our selected track collections
+    // @param trackIndex is the track that we are picking. 
+    public static void maxLength(
+    		ArrayList<Integer> selectedTracks, 
+    		int[] tracks,
+    		int constTapeLength, int tapeRemain, int minLength, int pickedIndex ) {
+    	
+    	// base case: 
+    	// if tape's duration can no longer contain any more tracks,
+    	// or reach end of tracks selection, reached we stop. 
+    	if( tapeRemain - tracks[pickedIndex] < 0  || pickedIndex == tracks.length ) {
+    		
+    	}
+    	
+    	//pick indicated track 
+    	
+    	
+    
+    }
+    
+    
 	    
 }//End of Main Class
 
