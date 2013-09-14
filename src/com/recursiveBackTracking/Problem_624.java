@@ -1,3 +1,5 @@
+package com.recursiveBackTracking;
+
 import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -17,7 +19,7 @@ import static java.lang.System.out;
 /**
  * Use this file to submit. UVA only accepts class Main
  */
-public class Main {
+public class Problem_624 {
 	public static final boolean DEBUG = false;
 	
     public static void main(String[] args) throws IOException {
@@ -30,9 +32,35 @@ public class Main {
 		while((str = input.readLine()).length() > 0) {
 			
 			StringTokenizer stringTokenizer = new StringTokenizer(str);
+			
+			
 			int tapeCapacity = Integer.parseInt(stringTokenizer.nextToken());
+			int trackCount = Integer.parseInt(stringTokenizer.nextToken());
+			int[] tracks = new int[trackCount];
+			for(int i=0; i<tracks.length; i++) { 
+				tracks[i] = Integer.parseInt(stringTokenizer.nextToken());
+			}
+			
+			//Loop through each tracks. pick one track at a time, and recursively
+			//search for a solution. The loop acts as a 'bookmark' to mark where it all
+			// started. 
+			for(int i=0; i<tracks.length; i++) {
+				maxLength(new ArrayList<Integer>(), tracks, tapeCapacity, i);
+			}
+			
+			if(DEBUG)	System.out.println("min: " + MIN_LENGTH);
+			
+			int sum = 0;
+			for(int i : optimalList) {
+				sum += tracks[i];
+				sb.append(tracks[i]).append(" ");
+			}
+			
+			sb.append("sum:").append(sum);
 			sb.append("\n");
 			
+			MIN_LENGTH = Integer.MAX_VALUE;
+			optimalList = new ArrayList<Integer>();
 		}
 		
 		output.write(sb.toString().getBytes());
@@ -41,6 +69,84 @@ public class Main {
     
     }// end of static void main
     
+    // GLOBAL Class Variable for tracking optimal sln
+    public static int MIN_LENGTH = Integer.MAX_VALUE; 
+    public static ArrayList<Integer> optimalList; 
+    
+    // recursive backtracking method. 
+    // recursively pick a track, and add it into our selected track collections
+    // this method usually involves a for-loop embeded within a function. 
+    // each recursive call spawns a for-loop. 
+    //
+    // this method also sometimes involves an "undo" operation, to BackTrack 
+    //
+    // @param trackIndex is the track that we are picking. 
+    public static void maxLength(
+    		ArrayList<Integer> selectedTracks, 
+    		int[] tracks,
+    		int tapeRemain, int pickedIndex ) {
+    	
+    	if(DEBUG) { 
+        	System.out.println("----Entering Function----");
+        	System.out.printf("tR: %d , pIdx: %d\n", tapeRemain, pickedIndex );
+        	System.out.println("entered w:");
+        	for(int i : selectedTracks) {
+    			System.out.print(tracks[i] + " ");
+    		}System.out.println("");
+    		
+    		if(pickedIndex != tracks.length)
+    			System.out.println("mLen: " + MIN_LENGTH + " remain:: " + tapeRemain + " | " + (tapeRemain - tracks[pickedIndex]) + " pidX: " + pickedIndex );
+    	}
+
+		   
+    	// BASE CASE
+    	// if tape's remaining length can no longer contain any more tracks OR
+		// we have gotten past the list of possible tracks to pick from,
+		// we transfer whatever we have picked previously into our optimalSolution list. 
+		// pickedIndex == tracks.length  -> means overflow. ie: exhausted all possible selections.
+
+    	if(pickedIndex == tracks.length ||  tapeRemain - tracks[pickedIndex] < 0 ) {
+    		
+    		if(pickedIndex != tracks.length && DEBUG)
+    			System.out.println("minlength: " + MIN_LENGTH + " tapeRemain: " + tapeRemain + " | " + (tapeRemain - tracks[pickedIndex]) + " pickedIdx: " + pickedIndex );
+    		
+    		if(tapeRemain < MIN_LENGTH) { // record down optimal selection of tracks, if this grp of selection less than MIN
+
+    			optimalList = new ArrayList<Integer>(selectedTracks); //use copy-constructor to clone. safe, coz its integers
+        		MIN_LENGTH = tapeRemain; //record down new MIN value 
+        		
+        		if(DEBUG) {
+        	   		System.out.println("Selected: ");
+             		for(int i : selectedTracks) 
+            			System.out.print(tracks[i] + " ");
+             		
+            		System.out.println("new MinLength: " + MIN_LENGTH);
+        		}
+    		}
+
+    	} else { 
+
+    		//pick indicated track, and recursively try the other tracks
+	    	//note: each recursive call would spawn more for-loops as bookmarks
+	    	for(int i=pickedIndex +1; i<=tracks.length; i++) { 
+	    		
+	      		//Pick this track, and record it. 
+	    		selectedTracks.add( pickedIndex );
+	    		
+	    		//recursive call, to try out other tracks 
+	    		maxLength(selectedTracks, tracks, tapeRemain-tracks[pickedIndex], i);
+	    		
+	    	 	//undo selection for next loop
+	    		selectedTracks.remove(selectedTracks.size()-1);
+	    	}
+    	}
+    	
+    	if(DEBUG) System.out.println("EXIT pIdx: " + pickedIndex);
+    
+    }
+    
+  
+
     static class InputReader {
 
     	private InputStream stream;
