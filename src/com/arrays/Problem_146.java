@@ -1,4 +1,4 @@
-package com.easy.oneDimensionArray;
+package com.arrays;
 
 
 

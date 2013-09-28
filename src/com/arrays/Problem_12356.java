@@ -1,5 +1,6 @@
+package com.arrays;
 // USE ECLIPSE TO UNCOMMENT ALL 
-//package com.easy.oneDimensionArray;
+//package com.arrays;
 //
 //
 //import java.io.*;
